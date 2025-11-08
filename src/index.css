@@ -1,0 +1,330 @@
+:root {
+  --primary--color: #d34e20;
+  --secondary--color: rgb(33, 33, 139);
+  --font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(20deg, #d34e20, rgb(5, 10, 26));
+  height: 100%;
+  width: auto;
+  color: white;
+}
+
+.navBar {
+  display: flex;
+  background-color: rgba(128, 128, 128, 0.589);
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  border-radius: 2rem;
+  width: 80vw;
+  margin: 2rem;
+  padding: 0.6rem;
+  box-shadow: 1px 4px 15px white;
+}
+.Link {
+  font-size: xx-large;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.Link:hover {
+  color: rgb(197, 79, 49);
+}
+/* home */
+.contenedorHome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.contenedorHome > img {
+  width: 60vw;
+}
+
+/*Personajkes */
+.contenedorPersonajes {
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+.boxPersonajes {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedorButton {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+}
+.buttonPersonajes {
+  all: unset;
+  justify-content: space-around;
+  font-size: large;
+  border-radius: 2rem;
+  width: 20%;
+  margin: 1rem;
+  padding: 1rem;
+  box-shadow: 2px 5px 10px rgb(199, 199, 199);
+  background-color: rgba(212, 108, 66, 0.568);
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.buttonPersonajes:active {
+  box-shadow: 2px 10px 10px rgb(29, 28, 28);
+}
+/* personajes box */
+.CardPersonajes {
+  width: 15rem;
+  border-radius: 2rem;
+  padding: 2rem;
+  box-shadow: 0px 10px 15px #696565;
+  margin: 1rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+.CardPersonajes > img {
+  height: 15rem;
+  transition: 0.7s;
+}
+.CardPersonajes > img:hover {
+  transform: scale(1.5);
+}
+
+/* personaje individual */
+.contenedorPersonaje {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin: auto;
+}
+.detallePersonaje {
+  display: flex;
+  flex-direction: column;
+  font-size: large;
+  padding: 2rem;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardDetalles {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  margin-bottom: 3rem;
+}
+.cardDetalles > img {
+  height: 30rem;
+  width: auto;
+  object-fit: cover;
+  overflow: hidden;
+  display: flex;
+  transition: 1s;
+}
+.cardDetalles > li {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.cardDetalles > li > img {
+  width: 15rem;
+  border-radius: 50%;
+  box-shadow: 2px 1px 10px white;
+  display: block;
+  margin: 0 auto;
+}
+
+.cardDetalles > li > ul {
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  width: 100%;
+}
+.detallePersonaje > p {
+  max-width: 80%;
+  width: 50%;
+  padding: 4rem;
+  background-color: rgba(136, 125, 125, 0.712);
+  border-radius: 2rem;
+  box-shadow: 2px 10px 10px black;
+}
+
+.cardDetalles > img:hover {
+  transform: scale(1.2);
+}
+.transformaciones {
+  display: flex;
+  flex-wrap: wrap;
+  width: auto;
+  background-color: #3a2a24c0;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+  padding: 2rem;
+}
+
+.cardTransformacion {
+  display: flex;
+  margin: 1rem;
+  width: 12rem;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  flex-wrap: wrap;
+  transition: 0.6s;
+}
+.cardTransformacion > img {
+  height: 18rem;
+  width: auto;
+  transition: 0.7s;
+}
+.cardTransformacion > img:hover {
+  transform: scale(1.5);
+}
+
+/* planetas */
+.contenedorPlanetas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+  color: rgb(226, 219, 219);
+}
+.card-planetas {
+  display: flex;
+  width: 20rem;
+  height: 30rem;
+  margin: 0.5rem;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.212);
+  border-radius: 30px;
+  box-sizing: border-box;
+}
+
+.card-planetas > img {
+  width: 18rem;
+  height: 18rem;
+  border-radius: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.card-planetas > button {
+  all: unset;
+  color: white;
+  font-size: 1rem;
+  border-radius: 2rem;
+  width: 50%;
+  text-align: center;
+  padding: 0.8rem;
+  box-shadow: 2px 2px 10px rgb(121, 118, 118);
+  cursor: pointer;
+  margin-top: auto;
+  margin-bottom: 2rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.card-planetas > button:hover {
+  transform: scale(1.05);
+  box-shadow: 2px 8px 15px rgb(160, 160, 160);
+}
+
+/* planeta indiv=idual */
+
+.contenedorPlanetaIndividual {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.cardIndividualPlaneta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 90%;
+  height: 100%;
+}
+
+.cardIndividualPlaneta > p {
+  width: 50rem;
+  padding: 2rem;
+  background-color: #696565;
+  border-radius: 30rem;
+  color: white;
+  font-size: large;
+}
+
+.cardIndividualPlaneta > img {
+  height: 20rem;
+  width: auto;
+  object-fit: cover;
+  border-radius: 20rem;
+  box-shadow: 2px 10px 10px white;
+}
+
+.cardIndividualHabitantes {
+  display: flex;
+  background-color: #69656567;
+  border-radius: 5rem;
+  flex-wrap: wrap;
+  width: auto;
+  padding: 2rem;
+  justify-content: center;
+}
+
+.cardHabitantes {
+  margin: 1rem;
+}
+.cardHabitantes > img {
+  height: 15rem;
+  width: auto;
+  object-fit: cover;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.cardHabitantes > img:hover {
+  transform: scale(1.3);
+}
+
+/* botones */
+.buttonVolver {
+  all: unset;
+  font-size: xx-large;
+  justify-content: start;
+  position: absolute;
+  left: 5rem;
+  margin-top: 2rem;
+  padding: 2rem;
+  cursor: pointer;
+}
