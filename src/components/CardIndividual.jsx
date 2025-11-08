@@ -27,7 +27,7 @@ export function CardIndividual({ card }) {
           <h2>Transformaciones</h2>
           <div className="transformaciones">
             {card.transformations.map((trans) => (
-              <div className="cardTransformacion">
+              <div className="cardTransformacion" key={trans.name}>
                 <img src={trans.image}></img>
                 <h3>{trans.name}</h3>
               </div>

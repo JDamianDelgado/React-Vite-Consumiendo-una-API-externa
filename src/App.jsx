@@ -4,16 +4,20 @@ import { Planetas } from "./pages/Planetas";
 import "./index.css";
 import { Home } from "./pages/Home";
 import { NavbBar } from "./components/NavBar";
+import { Footer } from "./components/Footer";
 function App() {
   return (
-    <div className="contenedorHome">
-      <NavbBar />
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/personajes" element={<Personajes />} />
-        <Route path="/planetas" element={<Planetas />} />
-      </Routes>
-    </div>
+    <>
+      <div className="contenedorHome">
+        <NavbBar />
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/personajes" element={<Personajes />} />
+          <Route path="/planetas" element={<Planetas />} />
+        </Routes>
+      </div>
+      <Footer />
+    </>
   );
 }
 

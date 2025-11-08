@@ -1,15 +1,16 @@
 :root {
-  --primary--color: #d34e20;
+  --primary--color: #dfdcdb;
   --secondary--color: rgb(33, 33, 139);
   --font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
-
+html,
 body {
-  background: linear-gradient(20deg, #d34e20, rgb(5, 10, 26));
   height: 100%;
-  width: auto;
   color: white;
+
+  margin: 0;
+  padding: 0;
 }
 
 .navBar {
@@ -22,7 +23,7 @@ body {
   width: 80vw;
   margin: 2rem;
   padding: 0.6rem;
-  box-shadow: 1px 4px 15px white;
+  box-shadow: 1px 4px 15px rgb(17, 17, 17);
 }
 .Link {
   font-size: xx-large;
@@ -36,6 +37,8 @@ body {
 }
 /* home */
 .contenedorHome {
+  background: radial-gradient(circle, rgb(189, 112, 12), rgb(61, 37, 6));
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -51,6 +54,7 @@ body {
   color: white;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 .boxPersonajes {
   flex-wrap: wrap;
@@ -72,7 +76,7 @@ body {
   width: 20%;
   margin: 1rem;
   padding: 1rem;
-  box-shadow: 2px 5px 10px rgb(199, 199, 199);
+  box-shadow: 2px 5px 10px rgb(29, 26, 26);
   background-color: rgba(212, 108, 66, 0.568);
   cursor: pointer;
   margin-bottom: 1rem;
@@ -84,9 +88,10 @@ body {
 /* personajes box */
 .CardPersonajes {
   width: 15rem;
+  height: 20rem;
   border-radius: 2rem;
   padding: 2rem;
-  box-shadow: 0px 10px 15px #696565;
+  box-shadow: 0px 10px 15px #0f0e0e;
   margin: 1rem;
   justify-content: center;
   align-items: center;
@@ -106,7 +111,6 @@ body {
   display: flex;
   width: 100%;
   flex-direction: column;
-  margin: auto;
 }
 .detallePersonaje {
   display: flex;
@@ -181,9 +185,11 @@ body {
   align-items: center;
   border-radius: 2rem;
   padding: 2rem;
+  height: 100%;
 }
 
 .cardTransformacion {
+  height: 100%;
   display: flex;
   margin: 1rem;
   width: 12rem;
@@ -203,12 +209,12 @@ body {
 }
 
 /* planetas */
+
 .contenedorPlanetas {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  align-items: flex-start;
   color: rgb(226, 219, 219);
 }
 .card-planetas {
@@ -258,8 +264,8 @@ body {
 
 .contenedorPlanetaIndividual {
   display: flex;
+  min-height: 80rem;
   flex-direction: column;
-  height: 100%;
   justify-content: space-between;
   align-items: center;
   text-align: center;
@@ -273,6 +279,7 @@ body {
   text-align: center;
   width: 90%;
   height: 100%;
+  margin-bottom: 5rem;
 }
 
 .cardIndividualPlaneta > p {
@@ -289,7 +296,7 @@ body {
   width: auto;
   object-fit: cover;
   border-radius: 20rem;
-  box-shadow: 2px 10px 10px white;
+  box-shadow: 2px 10px 10px rgb(3, 3, 3);
 }
 
 .cardIndividualHabitantes {
@@ -327,4 +334,129 @@ body {
   margin-top: 2rem;
   padding: 2rem;
   cursor: pointer;
+}
+
+/* footer  */
+
+.footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* responsive  */
+@media (max-width: 768px) {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  .Link {
+    font-size: medium;
+  }
+
+  .CardPersonajes {
+    width: 6rem;
+    height: 9rem;
+    margin: 0.3rem;
+    overflow: hidden;
+    align-items: center;
+  }
+  .CardPersonajes > h1 {
+    display: none;
+  }
+  .CardPersonajes > img {
+    height: 10rem;
+  }
+
+  .detallePersonaje > h1 {
+    margin-top: 1;
+    margin-bottom: -1.2rem;
+    background-color: #70460f;
+    width: 80%;
+    padding: 1rem;
+    border-radius: 5rem;
+  }
+
+  .detallePersonaje > p {
+    padding: 1rem;
+    margin-top: 2rem;
+    width: 100%;
+  }
+  .cardDetalles > img {
+    min-height: 25rem;
+    height: 25rem;
+  }
+  .card-planetas {
+    width: 10rem;
+    padding: 0.5rem;
+    height: 15rem;
+    font-size: x-small;
+  }
+  .card-planetas > img {
+    object-fit: cover;
+    height: 10rem;
+    width: 8rem;
+    border-radius: 1rem;
+  }
+  .card-planetas > button {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.cardIndividualPlaneta {
+  width: 80%;
+}
+.cardIndividualPlaneta > p {
+  margin-top: 1rem;
+  padding: 1rem;
+  width: 80%;
+  border-radius: 10px;
+}
+.cardIndividualPlaneta > img {
+  width: 90%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.cardIndividualHabitantes {
+  padding: 0;
+  overflow: hidden;
+}
+
+.cardHabitantes {
+  width: 10rem;
+  height: 16rem;
+}
+.cardHabitantes > p {
+  margin: 0;
+  padding: 0;
+}
+
+.buttonVolver {
+  font-size: x-large;
+  top: 5.5rem;
+  padding: 0;
+  left: 0.3rem;
+  margin-top: 0;
+  margin: 0;
+  color: orange;
+  background-color: #0f0e0e;
+  border-radius: 10px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.buttonPersonajes {
+  width: 30%;
+}
+
+@media (max-width: 420px) {
+  .Link {
+    font-size: medium;
+  }
+  .card {
+    width: 95%;
+  }
 }

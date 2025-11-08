@@ -39,9 +39,6 @@ Ejemplos de endpoints:
 
 ## 🖥️ Vista previa
 
-![Captura 1](./public/captura1.png)
-![Captura 2](./public/captura2.png)
-
 ---
 
 ## ⚙️ Instalación y ejecución local
@@ -68,7 +65,10 @@ http://localhost:5173
 
 📸 Capturas
 🔹 Página de inicio
+![Captura 1](./public/captura1.png)
 
 🔹 Personajes
+![Captura 2](./public/captura2.png)
 
 🔹 Planetas
+![Captura 2](./public/captura3.png)

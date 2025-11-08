@@ -20,7 +20,7 @@ export function Planetas() {
   }, [page, dispatch]);
 
   return (
-    <div>
+    <div className="planetasBody">
       {loading && (
         <div>
           <h1>Cargando...</h1>
