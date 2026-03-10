@@ -1,80 +1,106 @@
 import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
-  fetchPersonajes,
+  clearPersonaje,
   fetchPersonaje,
+  fetchPersonajes,
   nextPage,
   prevPage,
-  clearPersonaje,
 } from "../features/personajes/personajesSlice";
 import { CardDragonBallz } from "../components/CardDragonBallz";
 import { CardIndividual } from "../components/CardIndividual";
+
 export function Personajes() {
   const dispatch = useDispatch();
-  const { personajes, personaje, page, loading } = useSelector(
-    (state) => state.personajes
-  );
+  const { personajes, personaje, page, loading, error, totalPages } =
+    useSelector((state) => state.personajes);
 
   useEffect(() => {
-    dispatch(fetchPersonajes(page));
-  }, [page, dispatch]);
+    if (!personaje) {
+      dispatch(fetchPersonajes(page));
+    }
+  }, [dispatch, page, personaje]);
+
+  if (loading && !personaje) {
+    return (
+      <section className="contentPage">
+        <div className="statusPanel">
+          <div className="loader" />
+          <p>Cargando personajes...</p>
+        </div>
+      </section>
+    );
+  }
+
+  if (error && !personaje) {
+    return (
+      <section className="contentPage">
+        <div className="statusPanel error">
+          <h2>No se pudieron cargar los personajes</h2>
+          <p>{error}</p>
+          <button
+            className="buttonPersonajes"
+            onClick={() => dispatch(fetchPersonajes(page))}
+          >
+            Reintentar
+          </button>
+        </div>
+      </section>
+    );
+  }
 
   return (
-    <div className="contenedorPersonajes">
-      {loading && (
-        <div>
-          <img
-            src="https://i.pinimg.com/originals/b1/07/b0/b107b0597cb3885e428c72d1a20bdabe.gif"
-            alt=""
-          />
-          <p>Cargando.. </p>
-        </div>
-      )}
-
+    <section className="contentPage">
       {!personaje ? (
-        <div className="contenedorPersonajes">
-          <h1>Personajes</h1>
+        <>
+          <div className="sectionHeader">
+            <span className="sectionEyebrow">Explorador</span>
+            <h1>Personajes</h1>
+            <p>
+              Consulta el elenco de Dragon Ball y abre cada ficha para ver su
+              descripcion, origen y transformaciones.
+            </p>
+          </div>
           <div className="boxPersonajes">
             {personajes.map((pers) => (
-              <div key={pers.id}>
-                <CardDragonBallz
-                  key={pers.name}
-                  card={pers}
-                  onClick={() => dispatch(fetchPersonaje(pers.id))}
-                />
-              </div>
+              <CardDragonBallz
+                key={pers.id}
+                card={pers}
+                onClick={() => dispatch(fetchPersonaje(pers.id))}
+              />
             ))}
           </div>
           <div className="contenedorButton">
             <button
               className="buttonPersonajes"
               onClick={() => dispatch(prevPage())}
+              disabled={page <= 1}
             >
-              {" "}
-              ⟵ Anterior
+              Anterior
             </button>
+            <span className="pageIndicator">
+              Pagina {page} de {totalPages}
+            </span>
             <button
               className="buttonPersonajes"
               onClick={() => dispatch(nextPage())}
+              disabled={page >= totalPages}
             >
-              Siguiente ⟶
+              Siguiente
             </button>
           </div>
-        </div>
+        </>
       ) : (
-        <>
-          <div className="contenedorPersonaje">
-            <CardIndividual card={personaje} />
-          </div>
-
+        <div className="detailWrapper">
           <button
             className="buttonVolver"
             onClick={() => dispatch(clearPersonaje())}
           >
-            ⟵ Volver
+            Volver al listado
           </button>
-        </>
+          <CardIndividual card={personaje} />
+        </div>
       )}
-    </div>
+    </section>
   );
 }

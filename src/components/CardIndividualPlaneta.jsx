@@ -1,22 +1,45 @@
 export function CardIndividualPlaneta({ planeta }) {
   return (
-    <div className="cardIndividualPlaneta" key={planeta.name}>
-      <h1>{planeta.name}</h1>
-      <img src={planeta.image} alt={planeta.name} />
-      <p>{planeta.description}</p>
-      <h2>Habitantes</h2>
-      <div className="cardIndividualHabitantes">
+    <article className="cardIndividualPlaneta">
+      <div className="detailHero">
+        <div className="detailHeroImage planetDetailImage">
+          <img src={planeta.image} alt={planeta.name} />
+        </div>
+        <div className="detailHeroCopy">
+          <span className="sectionEyebrow">Ficha de planeta</span>
+          <h1>{planeta.name}</h1>
+          <p>{planeta.description || "Sin descripcion disponible."}</p>
+        </div>
+      </div>
+
+      <div className="statsGrid">
+        <article className="statCard">
+          <h3>Estado</h3>
+          <p>{planeta.isDestroyed ? "Planeta destruido" : "Planeta activo"}</p>
+        </article>
+        <article className="statCard">
+          <h3>Habitantes registrados</h3>
+          <p>{planeta.characters?.length || 0}</p>
+        </article>
+      </div>
+
+      <div className="transformSection">
+        <h2>Habitantes</h2>
         {planeta.characters && planeta.characters.length > 0 ? (
-          planeta.characters.map((cha) => (
-            <div className="cardHabitantes" key={cha.name}>
-              <img src={cha.image} alt={cha.id} />
-              <p>{cha.name}</p>
-            </div>
-          ))
+          <div className="cardIndividualHabitantes">
+            {planeta.characters.map((cha) => (
+              <article className="cardHabitantes" key={cha.id || cha.name}>
+                <img src={cha.image} alt={cha.name} />
+                <p>{cha.name}</p>
+              </article>
+            ))}
+          </div>
         ) : (
-          <p>No hay personajes</p>
+          <div className="emptyState">
+            No hay personajes registrados en este planeta.
+          </div>
         )}
       </div>
-    </div>
+    </article>
   );
 }

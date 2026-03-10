@@ -1,17 +1,34 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export function NavbBar() {
   return (
-    <nav className="navBar">
-      <Link className="Link" to={"/"}>
-        Home
-      </Link>
-      <Link className="Link" to="/personajes">
-        Personajes
-      </Link>
-      <Link className="Link" to="/planetas">
-        Planetas
-      </Link>
-    </nav>
+    <header className="topBar">
+      <nav className="navBar">
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "Link activeLink" : "Link"
+          }
+          to="/"
+        >
+          Inicio
+        </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "Link activeLink" : "Link"
+          }
+          to="/personajes"
+        >
+          Personajes
+        </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "Link activeLink" : "Link"
+          }
+          to="/planetas"
+        >
+          Planetas
+        </NavLink>
+      </nav>
+    </header>
   );
 }

@@ -1,40 +1,66 @@
-import { EfectoZoom } from "./EfectoZoom";
-
 export function CardIndividual({ card }) {
-  if (!card) return null;
+  if (!card) {
+    return null;
+  }
 
   return (
-    <div className="detallePersonaje" key={card.name}>
-      <h1>{card.name}</h1>
-
-      <p>{card.description}</p>
-      <div className="cardDetalles">
-        <img src={card.image} alt={card.name} />
-        <li>
-          <h3>Datos</h3>
-          <ul>Sexo: {card.gender}</ul>
-          <ul>Race: {card.race}</ul>
-          <ul>Ki: {card.ki}</ul>
-          <ul>Equipo: {card.affiliation}</ul>
-          <ul>Planeta: {card.originPlanet.name}</ul>
-          <img src={card.originPlanet.image} alt={card.originPlanet.name} />
-        </li>
+    <article className="detallePersonaje">
+      <div className="detailHero">
+        <div className="detailHeroImage">
+          <img src={card.image} alt={card.name} />
+        </div>
+        <div className="detailHeroCopy">
+          <span className="sectionEyebrow">Ficha de personaje</span>
+          <h1>{card.name}</h1>
+          <p>{card.description || "Sin descripcion disponible."}</p>
+        </div>
       </div>
-      {!card.transformations || card.transformations.length === 0 ? (
-        <h2 className="transformaciones">Sin transformaciones</h2>
-      ) : (
-        <>
-          <h2>Transformaciones</h2>
+
+      <div className="statsGrid">
+        <article className="statCard">
+          <h3>Datos base</h3>
+          <ul className="detailsList">
+            <li>Genero: {card.gender || "No disponible"}</li>
+            <li>Raza: {card.race || "No disponible"}</li>
+            <li>Ki: {card.ki || "No disponible"}</li>
+            <li>Afiliacion: {card.affiliation || "No disponible"}</li>
+          </ul>
+        </article>
+
+        <article className="statCard">
+          <h3>Planeta de origen</h3>
+          {card.originPlanet ? (
+            <div className="originPlanetCard">
+              <img src={card.originPlanet.image} alt={card.originPlanet.name} />
+              <strong>{card.originPlanet.name}</strong>
+            </div>
+          ) : (
+            <p>No disponible.</p>
+          )}
+        </article>
+      </div>
+
+      <div className="transformSection">
+        <h2>Transformaciones</h2>
+        {!card.transformations || card.transformations.length === 0 ? (
+          <div className="emptyState">
+            Este personaje no tiene transformaciones.
+          </div>
+        ) : (
           <div className="transformaciones">
             {card.transformations.map((trans) => (
-              <div className="cardTransformacion" key={trans.name}>
-                <img src={trans.image}></img>
+              <article
+                className="cardTransformacion"
+                key={trans.id || trans.name}
+              >
+                <img src={trans.image} alt={trans.name} />
                 <h3>{trans.name}</h3>
-              </div>
+                {/* <p>{trans.ki || "Ki no disponible"}</p> */}
+              </article>
             ))}
           </div>
-        </>
-      )}
-    </div>
+        )}
+      </div>
+    </article>
   );
 }

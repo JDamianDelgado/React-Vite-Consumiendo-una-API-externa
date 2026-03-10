@@ -1,25 +1,39 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-//TOEDOS LOS PERSONAJES
 export const fetchPersonajes = createAsyncThunk(
   "personajes/fetchPersonajes",
-  async (page = 1) => {
-    const response = await axios.get(
-      `https://dragonball-api.com/api/characters?page=${page}&limit=10`
-    );
-    return response.data.items;
+  async (page = 1, { rejectWithValue }) => {
+    try {
+      const response = await axios.get(
+        `https://dragonball-api.com/api/characters?page=${page}&limit=12`
+      );
+
+      return {
+        items: response.data.items ?? [],
+        totalPages: response.data.meta?.totalPages ?? page,
+      };
+    } catch (error) {
+      return rejectWithValue(
+        error.response?.data?.message || "Ocurrio un error al cargar personajes."
+      );
+    }
   }
 );
 
-// PERSONAJE INDIVIDUAL
 export const fetchPersonaje = createAsyncThunk(
   "personajes/fetchPersonaje",
-  async (id) => {
-    const response = await axios.get(
-      `https://dragonball-api.com/api/characters/${id}`
-    );
-    return response.data;
+  async (id, { rejectWithValue }) => {
+    try {
+      const response = await axios.get(
+        `https://dragonball-api.com/api/characters/${id}`
+      );
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(
+        error.response?.data?.message || "Ocurrio un error al cargar el personaje."
+      );
+    }
   }
 );
 
@@ -29,37 +43,52 @@ const personajesSlice = createSlice({
     personajes: [],
     personaje: null,
     page: 1,
+    totalPages: 1,
     loading: false,
     error: null,
   },
   reducers: {
     nextPage: (state) => {
-      state.page = state.page === 6 ? 1 : state.page + 1;
+      if (state.page < state.totalPages) {
+        state.page += 1;
+      }
     },
     prevPage: (state) => {
-      state.page = state.page === 1 ? 6 : state.page - 1;
+      if (state.page > 1) {
+        state.page -= 1;
+      }
     },
     clearPersonaje: (state) => {
       state.personaje = null;
+      state.error = null;
     },
   },
   extraReducers: (builder) => {
     builder
-      // LISTA
       .addCase(fetchPersonajes.pending, (state) => {
         state.loading = true;
+        state.error = null;
       })
       .addCase(fetchPersonajes.fulfilled, (state, action) => {
         state.loading = false;
-        state.personajes = action.payload;
+        state.personajes = action.payload.items;
+        state.totalPages = action.payload.totalPages;
       })
       .addCase(fetchPersonajes.rejected, (state, action) => {
         state.loading = false;
-        state.error = action.error.message;
+        state.error = action.payload || action.error.message;
       })
-      // INDIVIDUAL
+      .addCase(fetchPersonaje.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
       .addCase(fetchPersonaje.fulfilled, (state, action) => {
+        state.loading = false;
         state.personaje = action.payload;
+      })
+      .addCase(fetchPersonaje.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload || action.error.message;
       });
   },
 });

@@ -1,462 +1,563 @@
 :root {
-  --primary--color: #dfdcdb;
-  --secondary--color: rgb(33, 33, 139);
-  --font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-}
-html,
-body {
-  height: 100%;
-  color: white;
-
-  margin: 0;
-  padding: 0;
-}
-
-.navBar {
-  display: flex;
-  background-color: rgba(128, 128, 128, 0.589);
-  justify-content: space-around;
-  align-items: center;
-  text-align: center;
-  border-radius: 2rem;
-  width: 80vw;
-  margin: 2rem;
-  padding: 0.6rem;
-  box-shadow: 1px 4px 15px rgb(17, 17, 17);
-}
-.Link {
-  font-size: xx-large;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #f7f3ea;
+  background:
+    radial-gradient(circle at top, rgba(255, 170, 65, 0.32), transparent 32%),
+    linear-gradient(180deg, #20130a 0%, #120d09 45%, #0d0f17 100%);
+  color-scheme: dark;
+  --bg-card: rgba(20, 21, 31, 0.76);
+  --bg-card-strong: rgba(29, 21, 12, 0.92);
+  --border-soft: rgba(255, 255, 255, 0.1);
+  --accent: #ffb347;
+  --accent-strong: #ff7a18;
+  --text-muted: #d3c6b8;
+  --shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
 }
 
-.Link:hover {
-  color: rgb(197, 79, 49);
-}
-/* home */
-.contenedorHome {
-  background: radial-gradient(circle, rgb(189, 112, 12), rgb(61, 37, 6));
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-.contenedorHome > img {
-  width: 60vw;
-}
-
-/*Personajkes */
-.contenedorPersonajes {
-  color: white;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-.boxPersonajes {
-  flex-wrap: wrap;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.contenedorButton {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 2rem;
-}
-.buttonPersonajes {
-  all: unset;
-  justify-content: space-around;
-  font-size: large;
-  border-radius: 2rem;
-  width: 20%;
-  margin: 1rem;
-  padding: 1rem;
-  box-shadow: 2px 5px 10px rgb(29, 26, 26);
-  background-color: rgba(212, 108, 66, 0.568);
-  cursor: pointer;
-  margin-bottom: 1rem;
-}
-
-.buttonPersonajes:active {
-  box-shadow: 2px 10px 10px rgb(29, 28, 28);
-}
-/* personajes box */
-.CardPersonajes {
-  width: 15rem;
-  height: 20rem;
-  border-radius: 2rem;
-  padding: 2rem;
-  box-shadow: 0px 10px 15px #0f0e0e;
-  margin: 1rem;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  cursor: pointer;
-}
-.CardPersonajes > img {
-  height: 15rem;
-  transition: 0.7s;
-}
-.CardPersonajes > img:hover {
-  transform: scale(1.5);
-}
-
-/* personaje individual */
-.contenedorPersonaje {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-}
-.detallePersonaje {
-  display: flex;
-  flex-direction: column;
-  font-size: large;
-  padding: 2rem;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-}
-
-.cardDetalles {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  width: 100%;
-  margin-bottom: 3rem;
-}
-.cardDetalles > img {
-  height: 30rem;
-  width: auto;
-  object-fit: cover;
-  overflow: hidden;
-  display: flex;
-  transition: 1s;
-}
-.cardDetalles > li {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: left;
-  padding: 1rem;
-  margin-bottom: 1rem;
-}
-
-.cardDetalles > li > img {
-  width: 15rem;
-  border-radius: 50%;
-  box-shadow: 2px 1px 10px white;
-  display: block;
-  margin: 0 auto;
-}
-
-.cardDetalles > li > ul {
-  list-style: none;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: left;
-  width: 100%;
-}
-.detallePersonaje > p {
-  max-width: 80%;
-  width: 50%;
-  padding: 4rem;
-  background-color: rgba(136, 125, 125, 0.712);
-  border-radius: 2rem;
-  box-shadow: 2px 10px 10px black;
-}
-
-.cardDetalles > img:hover {
-  transform: scale(1.2);
-}
-.transformaciones {
-  display: flex;
-  flex-wrap: wrap;
-  width: auto;
-  background-color: #3a2a24c0;
-  justify-content: center;
-  align-items: center;
-  border-radius: 2rem;
-  padding: 2rem;
-  height: 100%;
-}
-
-.cardTransformacion {
-  height: 100%;
-  display: flex;
-  margin: 1rem;
-  width: 12rem;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  flex-wrap: wrap;
-  transition: 0.6s;
-}
-.cardTransformacion > img {
-  height: 18rem;
-  width: auto;
-  transition: 0.7s;
-}
-.cardTransformacion > img:hover {
-  transform: scale(1.5);
-}
-
-/* planetas */
-
-.contenedorPlanetas {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  color: rgb(226, 219, 219);
-}
-.card-planetas {
-  display: flex;
-  width: 20rem;
-  height: 30rem;
-  margin: 0.5rem;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.212);
-  border-radius: 30px;
+* {
   box-sizing: border-box;
 }
 
-.card-planetas > img {
-  width: 18rem;
-  height: 18rem;
-  border-radius: 100%;
-  object-fit: cover;
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+a,
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  border: 0;
+}
+
+.appShell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.appContent {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  flex: 1;
+  padding: 24px 0 56px;
+}
+
+.topBar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(16px);
+  background: rgba(13, 15, 23, 0.45);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.navBar {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding: 18px 0;
+}
+
+.Link {
+  text-decoration: none;
+  color: #fff8ee;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid transparent;
+  transition: 0.25s ease;
+}
+
+.Link:hover,
+.activeLink {
+  color: #111;
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  box-shadow: 0 10px 28px rgba(255, 122, 24, 0.3);
+}
+
+.homePage,
+.contentPage {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.heroPanel,
+.detailWrapper,
+.sectionHeader,
+.statusPanel,
+.infoCard,
+.detallePersonaje,
+.cardIndividualPlaneta {
+  border: 1px solid var(--border-soft);
+  background: var(--bg-card);
+  box-shadow: var(--shadow);
+}
+
+.heroPanel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  gap: 28px;
+  align-items: center;
+  padding: 32px;
+  border-radius: 32px;
   overflow: hidden;
-  margin-top: auto;
-  margin-bottom: auto;
+}
+
+.heroCopy,
+.detailHeroCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.heroBadge,
+.sectionEyebrow {
+  width: fit-content;
+  padding: 8px 14px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: #20130a;
+  background: linear-gradient(135deg, #ffe29a, var(--accent));
+  font-weight: 700;
+}
+
+.heroCopy h1,
+.sectionHeader h1,
+.detailHeroCopy h1 {
+  margin: 0;
+  line-height: 1.05;
+  font-size: clamp(2.4rem, 4vw, 4.6rem);
+}
+
+.heroCopy p,
+.sectionHeader p,
+.detailHeroCopy p,
+.infoCard p,
+.statCard p,
+.emptyState,
+.planetCardContent p,
+.cardContent p,
+.footer span,
+.pageIndicator {
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.heroActions,
+.contenedorButton {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+.ctaButton,
+.buttonPersonajes,
+.buttonVolver,
+.card-planetas > button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 20px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.ctaButton.primary,
+.buttonPersonajes,
+.card-planetas > button {
+  color: #1a1208;
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  box-shadow: 0 16px 30px rgba(255, 122, 24, 0.24);
+}
+
+.ctaButton.secondary,
+.buttonVolver {
+  color: #fff8ee;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-soft);
+}
+
+.ctaButton:hover,
+.buttonPersonajes:hover,
+.buttonVolver:hover,
+.card-planetas > button:hover,
+.CardPersonajes:hover,
+.card-planetas:hover,
+.cardTransformacion:hover,
+.cardHabitantes:hover {
+  transform: translateY(-4px);
+}
+
+.buttonPersonajes:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.heroArtwork {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+}
+
+.heroArtwork img {
+  width: min(100%, 420px);
+  filter: drop-shadow(0 22px 38px rgba(0, 0, 0, 0.4));
+}
+
+.highlightGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.infoCard,
+.sectionHeader,
+.statusPanel,
+.detailWrapper {
+  border-radius: 28px;
+  padding: 26px;
+}
+
+.sectionHeader {
+  gap: 12px;
+}
+
+.sectionHeader h1 {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+}
+
+.boxPersonajes,
+.contenedorPlanetas,
+.transformaciones,
+.cardIndividualHabitantes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.CardPersonajes,
+.card-planetas,
+.cardTransformacion,
+.cardHabitantes {
+  width: 100%;
+  color: inherit;
+  text-align: left;
+  border-radius: 26px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(8, 9, 15, 0.28));
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow);
+}
+
+.CardPersonajes {
+  padding: 18px;
+  cursor: pointer;
+}
+
+.cardImageWrap,
+.planetImageWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 260px;
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at top, rgba(255, 179, 71, 0.2), transparent 40%),
+    rgba(255, 255, 255, 0.02);
+}
+
+.CardPersonajes img,
+.card-planetas img,
+.cardTransformacion img,
+.cardHabitantes img,
+.detailHeroImage img,
+.originPlanetCard img {
+  display: block;
+  max-width: 100%;
+}
+
+.CardPersonajes img {
+  max-height: 220px;
+  object-fit: contain;
+}
+
+.cardContent,
+.planetCardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 18px;
+}
+
+.cardContent h2,
+.planetCardContent h2,
+.infoCard h2,
+.statCard h3,
+.transformSection h2 {
+  margin: 0;
+}
+
+.card-planetas {
+  padding: 18px;
+}
+
+.planetImageWrap {
+  min-height: 220px;
+}
+
+.card-planetas img {
+  width: min(100%, 220px);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .card-planetas > button {
-  all: unset;
-  color: white;
-  font-size: 1rem;
-  border-radius: 2rem;
-  width: 50%;
-  text-align: center;
-  padding: 0.8rem;
-  box-shadow: 2px 2px 10px rgb(121, 118, 118);
-  cursor: pointer;
-  margin-top: auto;
-  margin-bottom: 2rem;
-  transition: all 0.2s ease-in-out;
+  margin-top: 18px;
+  width: 100%;
 }
 
-.card-planetas > button:hover {
-  transform: scale(1.05);
-  box-shadow: 2px 8px 15px rgb(160, 160, 160);
-}
-
-/* planeta indiv=idual */
-
-.contenedorPlanetaIndividual {
+.detailWrapper {
   display: flex;
-  min-height: 80rem;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  color: white;
+  gap: 24px;
 }
 
+.detallePersonaje,
 .cardIndividualPlaneta {
   display: flex;
   flex-direction: column;
+  gap: 28px;
+  padding: 30px;
+  border-radius: 30px;
+}
+
+.detailHero {
+  display: grid;
+  grid-template-columns: minmax(260px, 360px) minmax(0, 1fr);
+  gap: 24px;
   align-items: center;
-  text-align: center;
-  width: 90%;
-  height: 100%;
-  margin-bottom: 5rem;
 }
 
-.cardIndividualPlaneta > p {
-  width: 50rem;
-  padding: 2rem;
-  background-color: #696565;
-  border-radius: 30rem;
-  color: white;
-  font-size: large;
-}
-
-.cardIndividualPlaneta > img {
-  height: 20rem;
-  width: 20rem;
-  border-radius: 20rem;
-  box-shadow: 2px 10px 10px rgb(3, 3, 3);
-}
-
-.cardIndividualHabitantes {
+.detailHeroImage {
   display: flex;
-  background-color: #69656567;
-  border-radius: 5rem;
-  flex-wrap: wrap;
-  width: auto;
-  padding: 2rem;
+  justify-content: center;
+  align-items: center;
+  min-height: 380px;
+  padding: 24px;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top, rgba(255, 179, 71, 0.24), transparent 42%),
+    rgba(255, 255, 255, 0.04);
+}
+
+.detailHeroImage img {
+  max-height: 420px;
+  object-fit: contain;
+}
+
+.planetDetailImage img {
+  width: min(100%, 360px);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.statCard {
+  padding: 22px;
+  border-radius: 24px;
+  background: var(--bg-card-strong);
+  border: 1px solid var(--border-soft);
+}
+
+.detailsList {
+  padding-left: 18px;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.originPlanetCard {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.originPlanetCard img {
+  width: min(100%, 180px);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 24px;
+}
+
+.transformSection {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.cardTransformacion,
+.cardHabitantes {
+  padding: 18px;
+  text-align: center;
+}
+
+.cardTransformacion img,
+.cardHabitantes img {
+  height: 220px;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 20px;
+}
+
+.emptyState,
+.statusPanel {
+  text-align: center;
+}
+
+.statusPanel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  min-height: 240px;
   justify-content: center;
 }
 
-.cardHabitantes {
-  margin: 1rem;
-}
-.cardHabitantes > img {
-  height: 15rem;
-  width: auto;
-  object-fit: cover;
-  overflow: hidden;
-  transition: 0.3s;
+.statusPanel.error {
+  background: rgba(70, 18, 18, 0.72);
 }
 
-.cardHabitantes > img:hover {
-  transform: scale(1.3);
+.loader {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  border-top-color: var(--accent);
+  animation: spin 1s linear infinite;
 }
 
-/* botones */
-.buttonVolver {
-  all: unset;
-  font-size: xx-large;
-  justify-content: start;
-  position: absolute;
-  left: 5rem;
-  margin-top: 2rem;
-  padding: 2rem;
-  cursor: pointer;
+.pageIndicator {
+  min-width: 128px;
+  text-align: center;
 }
-
-/* footer  */
 
 .footer {
-  background-color: #222;
-  color: white;
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto 24px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-soft);
   text-align: center;
-  padding: 1rem;
+  padding: 20px;
 }
 
-/* responsive  */
-@media (max-width: 420px) {
-  body {
-    margin: 0;
-    padding: 0;
+.footer p {
+  margin: 0 0 6px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
+}
+
+@media (max-width: 900px) {
+  .heroPanel,
+  .detailHero,
+  .statsGrid,
+  .highlightGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .navBar {
+    justify-content: stretch;
+  }
+
   .Link {
-    font-size: medium;
+    flex: 1;
+    text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .appContent,
+  .navBar,
+  .footer {
+    width: min(100% - 20px, 1180px);
   }
 
-  .CardPersonajes {
-    width: 6rem;
-    height: 9rem;
-    margin: 0.3rem;
-    overflow: hidden;
-    align-items: center;
-  }
-  .CardPersonajes > h1 {
-    display: none;
-  }
-  .CardPersonajes > img {
-    height: 10rem;
+  .heroPanel,
+  .sectionHeader,
+  .statusPanel,
+  .detailWrapper,
+  .detallePersonaje,
+  .cardIndividualPlaneta,
+  .infoCard {
+    padding: 20px;
+    border-radius: 22px;
   }
 
-  .detallePersonaje > h1 {
-    margin-top: 1;
-    margin-bottom: -1.2rem;
-    background-color: #70460f;
-    width: 80%;
-    padding: 1rem;
-    border-radius: 5rem;
+  .heroCopy h1,
+  .sectionHeader h1,
+  .detailHeroCopy h1 {
+    font-size: 2rem;
   }
 
-  .detallePersonaje > p {
-    padding: 1rem;
-    margin-top: 2rem;
-    width: 100%;
+  .navBar {
+    gap: 8px;
+    padding: 14px 0;
   }
-  .cardDetalles > img {
-    min-height: 25rem;
-    height: 25rem;
-  }
-  .card-planetas {
-    width: 10rem;
-    padding: 0.5rem;
-    height: 15rem;
-    font-size: x-small;
-  }
-  .card-planetas > img {
-    object-fit: cover;
-    height: 10rem;
-    width: 8rem;
-    border-radius: 1rem;
-  }
+
+  .Link,
+  .buttonPersonajes,
+  .buttonVolver,
+  .ctaButton,
   .card-planetas > button {
     width: 100%;
-    margin-top: 1rem;
-    padding: 0;
-    margin-bottom: 0.5rem;
   }
-}
 
-.cardIndividualPlaneta {
-  width: 80%;
-}
-.cardIndividualPlaneta > p {
-  margin-top: 1rem;
-  padding: 1rem;
-  width: 80%;
-  border-radius: 10px;
-}
-.cardIndividualPlaneta > img {
-  width: 30rem;
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
-}
-.cardIndividualHabitantes {
-  padding: 0;
-  overflow: hidden;
-}
-
-.cardHabitantes {
-  width: 10rem;
-  height: 16rem;
-}
-.cardHabitantes > p {
-  margin: 0;
-  padding: 0;
-}
-
-.buttonVolver {
-  font-size: x-large;
-  top: 5.5rem;
-  padding: 0;
-  left: 0.3rem;
-  margin-top: 0;
-  margin: 0;
-  color: orange;
-  background-color: #0f0e0e;
-  border-radius: 10px;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-.buttonPersonajes {
-  width: 30%;
-}
-
-@media (max-width: 420px) {
-  .Link {
-    font-size: medium;
+  .contenedorButton {
+    flex-direction: column;
   }
-  .card {
-    width: 95%;
+
+  .cardImageWrap,
+  .planetImageWrap,
+  .detailHeroImage {
+    min-height: 220px;
+  }
+
+  .CardPersonajes img,
+  .cardTransformacion img,
+  .cardHabitantes img {
+    height: 180px;
   }
 }

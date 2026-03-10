@@ -3,15 +3,19 @@ import { fetchPlaneta } from "../features/planetas/planetasSlice";
 
 export function CardPlanetas({ planeta }) {
   const dispatch = useDispatch();
+
   return (
-    <>
-      <div className="card-planetas">
-        <h1>{planeta.name}</h1>
+    <article className="card-planetas">
+      <div className="planetImageWrap">
         <img src={planeta.image} alt={planeta.name} />
-        <button onClick={() => dispatch(fetchPlaneta(planeta.id))}>
-          Detalle
-        </button>
       </div>
-    </>
+      <div className="planetCardContent">
+        <h2>{planeta.name}</h2>
+        <p>{planeta.isDestroyed ? "Destruido" : "Activo"}</p>
+      </div>
+      <button onClick={() => dispatch(fetchPlaneta(planeta.id))} type="button">
+        Ver detalle
+      </button>
+    </article>
   );
 }

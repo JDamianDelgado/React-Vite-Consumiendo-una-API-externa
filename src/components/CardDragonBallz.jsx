@@ -1,17 +1,17 @@
-import React from "react";
-import { fetchPersonaje } from "../features/personajes/personajesSlice";
-
 export function CardDragonBallz({ card, onClick }) {
-  if (!card) return null;
+  if (!card) {
+    return null;
+  }
 
   return (
-    <div className="CardPersonajes" onClick={onClick}>
-      <img
-        src={card.image}
-        alt={card.name}
-        onClick={() => fetchPersonaje(card.id)}
-      />
-      <h1>{card.name}</h1>
-    </div>
+    <button className="CardPersonajes" onClick={onClick} type="button">
+      <div className="cardImageWrap">
+        <img src={card.image} alt={card.name} />
+      </div>
+      <div className="cardContent">
+        <h2>{card.name}</h2>
+        <p>{card.race || "Origen desconocido"}</p>
+      </div>
+    </button>
   );
 }

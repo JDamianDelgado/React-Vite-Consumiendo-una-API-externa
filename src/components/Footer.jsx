@@ -1,7 +1,10 @@
 export function Footer() {
   return (
-    <div className="footer">
-      <p>Derechos reservados</p>
-    </div>
+    <footer className="footer">
+      <p>Dragon Ball API Explorer</p>
+      <span>
+        Todos los derechos reservados by <strong>@Joako</strong>
+      </span>
+    </footer>
   );
 }
